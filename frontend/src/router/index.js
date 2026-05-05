@@ -87,6 +87,11 @@ const routes = [
         path: 'map',
         name: 'Map',
         component: () => import('@/views/map/index.vue')
+      },
+      {
+        path: 'wecom',
+        name: 'Wecom',
+        component: () => import('@/views/wecom/index.vue')
       }
     ]
   }
