@@ -99,7 +99,7 @@ import { ElMessage } from 'element-plus'
 import {
   UserFilled, ArrowRight, ArrowDown, Fold, Expand, Close,
   HomeFilled, Goods, Van, ShoppingCart, Box, Sell, User, Shop,
-  OfficeBuilding, Money, Setting, TrendCharts
+  OfficeBuilding, Money, Setting, TrendCharts, StarFilled
 } from '@element-plus/icons-vue'
 
 const router = useRouter()
@@ -117,6 +117,7 @@ const username = computed(() => {
 const currentPageTitle = computed(() => {
   const titles = {
     '/dashboard': '儀表板',
+    '/quick-app': '快捷應用',
     '/products': '商品管理',
     '/suppliers': '供應商管理',
     '/purchase': '採購管理',
@@ -133,6 +134,11 @@ const currentPageTitle = computed(() => {
 })
 
 const menuList = [
+  {
+    path: '/quick-app',
+    title: '快捷應用',
+    icon: 'StarFilled'
+  },
   {
     path: '/dashboard',
     title: '儀表板',

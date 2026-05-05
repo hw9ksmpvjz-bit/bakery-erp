@@ -72,6 +72,11 @@ const routes = [
         path: 'settings',
         name: 'Settings',
         component: () => import('@/views/settings/index.vue')
+      },
+      {
+        path: 'quick-app',
+        name: 'QuickApp',
+        component: () => import('@/views/quick-app/index.vue')
       }
     ]
   }
