@@ -1,0 +1,44 @@
+name: 烘焙ERP自動部署
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: 設置Node.js環境
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: |
+          backend/package-lock.json
+          frontend/package-lock.json
+    
+    - name: 安裝後端依賴
+      run: |
+        cd backend
+        npm ci
+    
+    - name: 安裝前端依賴
+      run: |
+        cd frontend
+        npm ci
+    
+    - name: 構建前端
+      run: |
+        cd frontend
+        npm run build
+    
+    - name: 部署到Vercel (可選)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "如需自動部署到Vercel，請配置VERCEL_TOKEN"
+        # vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
