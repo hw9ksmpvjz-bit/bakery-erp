@@ -102,6 +102,16 @@ const routes = [
         path: 'credit',
         name: 'Credit',
         component: () => import('@/views/credit/index.vue')
+      },
+      {
+        path: 'app-center',
+        name: 'AppCenter',
+        component: () => import('@/views/app-center/index.vue')
+      },
+      {
+        path: 'content',
+        name: 'Content',
+        component: () => import('@/views/content/index.vue')
       }
     ]
   }
