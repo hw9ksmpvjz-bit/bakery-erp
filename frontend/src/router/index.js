@@ -92,6 +92,11 @@ const routes = [
         path: 'wecom',
         name: 'Wecom',
         component: () => import('@/views/wecom/index.vue')
+      },
+      {
+        path: 'credit',
+        name: 'Credit',
+        component: () => import('@/views/credit/index.vue')
       }
     ]
   }
